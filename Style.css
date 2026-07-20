@@ -43,7 +43,7 @@ nav a{
 
     background:
     linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.7)),
-    url("images/hero.jpg");
+    url("hero.jpg");
 
     background-size:cover;
     background-position:center;
