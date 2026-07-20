@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Tesla Auto Connect Shop</title>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<div class="logo">
+<h2>TESLA AUTO CONNECT</h2>
+</div>
+
+
+<nav>
+
+<a href="#home">Home</a>
+<a href="#cars">New Cars</a>
+<a href="#used">Used Cars</a>
+<a href="#cart">Cart 🛒</a>
+<a href="#checkout">Checkout</a>
+
+</nav>
+
+</header>
+
+
+
+
+<section class="hero" id="home">
+
+<div>
+
+<h1>
+Drive Your Dream Tesla
+</h1>
+
+
+<p>
+Buy New & Certified Used Tesla Vehicles
+</p>
+
+
+<a href="#cars" class="btn">
+Shop Now
+</a>
+
+
+</div>
+
+</section>
+
+
+
+
+
+<section class="products" id="cars">
+
+<h2>
+New Tesla Models
+</h2>
+
+
+<div class="product-grid">
+
+
+<div class="product">
+
+<img src="images/model3.jpg">
+
+<h3>Tesla Model 3</h3>
+
+<p>$38,990</p>
+
+<button onclick="addToCart('Tesla Model 3',38990)">
+Add To Cart
+</button>
+
+</div>
+
+
+
+
+<div class="product">
+
+<img src="images/modely.jpg">
+
+<h3>Tesla Model Y</h3>
+
+<p>$44,990</p>
+
+<button onclick="addToCart('Tesla Model Y',44990)">
+Add To Cart
+</button>
+
+</div>
+
+
+
+
+<div class="product">
+
+<img src="images/models.jpg">
+
+<h3>Tesla Model S</h3>
+
+<p>$79,990</p>
+
+<button onclick="addToCart('Tesla Model S',79990)">
+Add To Cart
+</button>
+
+</div>
+
+
+
+
+<div class="product">
+
+<img src="images/modelx.jpg">
+
+<h3>Tesla Model X</h3>
+
+<p>$84,990</p>
+
+<button onclick="addToCart('Tesla Model X',84990)">
+Add To Cart
+</button>
+
+</div>
+
+
+</div>
+
+</section><section class="products" id="used">
+
+<h2>
+Certified Used Tesla Cars
+</h2>
+
+
+<div class="product-grid">
+
+
+<div class="product">
+
+<img src="images/used1.jpg">
+
+<h3>Used Tesla Model 3</h3>
+
+<p>$28,990</p>
+
+<button onclick="addToCart('Used Tesla Model 3',28990)">
+Add To Cart
+</button>
+
+</div>
+
+
+
+
+<div class="product">
+
+<img src="images/used2.jpg">
+
+<h3>Used Tesla Model Y</h3>
+
+<p>$35,990</p>
+
+<button onclick="addToCart('Used Tesla Model Y',35990)">
+Add To Cart
+</button>
+
+</div>
+
+
+
+
+<div class="product">
+
+<img src="images/used3.jpg">
+
+<h3>Used Tesla Model S</h3>
+
+<p>$55,990</p>
+
+<button onclick="addToCart('Used Tesla Model S',55990)">
+Add To Cart
+</button>
+
+</div>
+
+
+
+
+<div class="product">
+
+<img src="images/used4.jpg">
+
+<h3>Used Tesla Model X</h3>
+
+<p>$65,990</p>
+
+<button onclick="addToCart('Used Tesla Model X',65990)">
+Add To Cart
+</button>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+
+
+<section class="cart" id="cart">
+
+<h2>
+Shopping Cart 🛒
+</h2>
+
+
+<div id="cartItems">
+
+Your cart is empty
+
+</div>
+
+
+<h3 id="total">
+Total: $0
+</h3>
+
+
+<a href="#checkout" class="btn">
+Proceed To Checkout
+</a>
+
+
+</section>
+
+
+
+
+
+<section class="checkout" id="checkout">
+
+
+<h2>
+Checkout
+</h2>
+
+
+
+<input id="name" type="text" placeholder="Full Name">
+
+
+
+<input id="email" type="email" placeholder="Email Address">
+
+
+
+<input id="phone" type="text" placeholder="Phone Number">
+
+
+
+<textarea id="message" placeholder="Your Order Details"></textarea>
+
+
+
+<h3>
+Payment Method
+</h3>
+
+
+<p>○ Bank Transfer</p>
+
+<p>○ Debit / Credit Card</p>
+
+<p>○ Apple Pay</p>
+
+<p>○ Gift Card</p>
+
+
+
+<button class="btn" onclick="sendEmail()">
+
+Place Order
+
+</button>
+<br><br>
+
+<button class="btn" onclick="sendWhatsApp()">
+
+Order Through WhatsApp
+
+</button>
+
+
+</section><section class="contact">
+
+<h2>
+Contact Tesla Auto Connect
+</h2>
+
+
+<p>
+📧 Email: em5656105@gmail.com
+</p>
+
+
+<p>
+📱 WhatsApp: 08128745721
+</p>
+
+
+</section>
+
+
+
+
+
+<footer>
+
+<p>
+© 2026 Tesla Auto Connect
+</p>
+
+</footer>
+
+
+
+
+
+<script src="script.js"></script>
+
+
+</body>
+
+</html>
