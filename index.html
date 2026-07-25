@@ -4,29 +4,136 @@
 <head>
 
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Tesla Auto Connect Shop</title>
-
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
 <link rel="stylesheet" href="style.css">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<style>
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+margin:0;
+font-family:'Poppins',sans-serif;
+background:#f5f5f5;
+color:#222;
+}
+
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 8%;
+background:#000;
+position:sticky;
+top:0;
+z-index:1000;
+box-shadow:0 2px 10px rgba(0,0,0,.2);
+}
+
+.logo h2{
+margin:0;
+color:#fff;
+letter-spacing:2px;
+}
+
+nav{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+font-weight:500;
+transition:.3s;
+}
+
+nav a:hover{
+color:#e82127;
+}
+
+.hero{
+height:90vh;
+background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),url("hero.jpg");
+background-size:cover;
+background-position:center;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+}
+
+.hero h1{
+font-size:55px;
+color:white;
+margin-bottom:10px;
+}
+
+.hero p{
+font-size:22px;
+color:#ddd;
+margin-bottom:30px;
+}
+
+.btn{
+display:inline-block;
+padding:14px 30px;
+background:#e82127;
+color:white;
+text-decoration:none;
+border:none;
+border-radius:8px;
+cursor:pointer;
+font-size:17px;
+transition:.3s;
+}
+
+.btn:hover{
+background:#b5171d;
+transform:translateY(-2px);
+}
+
+section{
+padding:70px 8%;
+}
+
+.section-title{
+text-align:center;
+font-size:34px;
+margin-bottom:40px;
+}
+
+.notice{
+background:#fff3cd;
+border-left:5px solid #ffc107;
+padding:15px;
+margin:20px auto;
+border-radius:6px;
+max-width:900px;
+}
+
+</style>
+
 </head>
 
-
 <body>
-
 
 <header>
 
 <div class="logo">
 <h2>TESLA AUTO CONNECT</h2>
 </div>
-
 
 <nav>
 
@@ -35,325 +142,919 @@
 <a href="#used">Used Cars</a>
 <a href="#cart">Cart 🛒</a>
 <a href="#checkout">Checkout</a>
+<a href="#contact">Contact</a>
 
 </nav>
 
 </header>
 
-
-
-
 <section class="hero" id="home">
 
 <div>
 
-<h1>
-Drive Your Dream Tesla
-</h1>
-
+<h1>Drive Your Dream Tesla</h1>
 
 <p>
-Buy New & Certified Used Tesla Vehicles
+Buy New & Certified Used Tesla Vehicles With Secure Ordering.
 </p>
-
 
 <a href="#cars" class="btn">
 Shop Now
 </a>
 
+</div>
+
+</section>
+
+<div class="notice">
+
+<strong>Notice:</strong><br>
+
+Tesla Auto Connect is an independent vehicle marketplace. Please verify all vehicle details before completing your purchase.
+
+</div><section class="products" id="cars">
+
+<h2 class="section-title">
+New Tesla Models
+</h2>
+
+<div class="product-grid">
+
+<div class="product">
+
+<img src="model3.jpg" alt="Tesla Model 3">
+
+<h3>Tesla Model 3</h3>
+
+<p class="price">$38,990</p>
+
+<p>
+Long Range • Autopilot • Premium Interior
+</p>
+
+<button class="btn"
+onclick="addToCart('Tesla Model 3',38990)">
+Add To Cart
+</button>
+
+</div>
+
+<div class="product">
+
+<img src="modely.jpg" alt="Tesla Model Y">
+
+<h3>Tesla Model Y</h3>
+
+<p class="price">$44,990</p>
+
+<p>
+AWD • Family SUV • Long Range
+</p>
+
+<button class="btn"
+onclick="addToCart('Tesla Model Y',44990)">
+Add To Cart
+</button>
+
+</div>
+
+<div class="product">
+
+<img src="models.jpg" alt="Tesla Model S">
+
+<h3>Tesla Model S</h3>
+
+<p class="price">$79,990</p>
+
+<p>
+Luxury Sedan • High Performance
+</p>
+
+<button class="btn"
+onclick="addToCart('Tesla Model S',79990)">
+Add To Cart
+</button>
+
+</div>
+
+<div class="product">
+
+<img src="modelx.jpg" alt="Tesla Model X">
+
+<h3>Tesla Model X</h3>
+
+<p class="price">$84,990</p>
+
+<p>
+Falcon Wing Doors • Premium SUV
+</p>
+
+<button class="btn"
+onclick="addToCart('Tesla Model X',84990)">
+Add To Cart
+</button>
+
+</div>
 
 </div>
 
 </section>
 
+<style>
 
+.product-grid{
 
+display:grid;
 
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 
-<section class="products" id="cars">
+gap:25px;
 
-<h2>
-New Tesla Models
+}
+
+.product{
+
+background:white;
+
+border-radius:15px;
+
+padding:20px;
+
+text-align:center;
+
+box-shadow:0 5px 20px rgba(0,0,0,.1);
+
+transition:.3s;
+
+}
+
+.product:hover{
+
+transform:translateY(-8px);
+
+}
+
+.product img{
+
+width:100%;
+
+height:220px;
+
+object-fit:cover;
+
+border-radius:10px;
+
+}
+
+.product h3{
+
+margin:15px 0 10px;
+
+}
+
+.price{
+
+font-size:24px;
+
+font-weight:bold;
+
+color:#e82127;
+
+margin-bottom:10px;
+
+}
+
+.product p{
+
+line-height:1.5;
+
+}
+
+.product button{
+
+margin-top:15px;
+
+width:100%;
+
+}
+
+</style><section class="products" id="used">
+
+<h2 class="section-title">
+Certified Used Tesla Vehicles
 </h2>
 
+<p style="text-align:center;">
+All vehicles are fully inspected before delivery.
+</p>
 
 <div class="product-grid">
 
-
 <div class="product">
 
-<img src="model3.jpg">
+<div class="sale-badge">🔥 SALE</div>
 
-<h3>Tesla Model 3</h3>
+<div class="offer-badge">⏳ LIMITED OFFER</div>
 
-<p>$38,990</p>
-
-<button onclick="addToCart('Tesla Model 3',38990)">
-Add To Cart
-</button>
-
-</div>
-
-
-
-
-<div class="product">
-
-<img src="modely.jpg">
-
-<h3>Tesla Model Y</h3>
-
-<p>$44,990</p>
-
-<button onclick="addToCart('Tesla Model Y',44990)">
-Add To Cart
-</button>
-
-</div>
-
-
-
-
-<div class="product">
-
-<img src="models.jpg">
-
-<h3>Tesla Model S</h3>
-
-<p>$79,990</p>
-
-<button onclick="addToCart('Tesla Model S',79990)">
-Add To Cart
-</button>
-
-</div>
-
-
-
-
-<div class="product">
-
-<img src="modelx.jpg">
-
-<h3>Tesla Model X</h3>
-
-<p>$84,990</p>
-
-<button onclick="addToCart('Tesla Model X',84990)">
-Add To Cart
-</button>
-
-</div>
-
-
-</div>
-
-</section><section class="products" id="used">
-
-<h2>
-Certified Used Tesla Cars
-</h2>
-
-
-<div class="product-grid">
-
-
-<div class="product">
-
-<img src="used1.jpg">
+<img src="used1.jpg" alt="Used Tesla Model 3">
 
 <h3>Used Tesla Model 3</h3>
 
-<p>$28,990</p>
+<p class="price">
+<del>$27,990</del><br>
+<span style="color:#e82127;font-size:26px;font-weight:bold;">
+$24,990
+</span>
+</p>
 
-<button onclick="addToCart('Used Tesla Model 3',28990)">
+<p>
+Excellent Condition • Low Mileage
+</p>
+
+<button class="btn"
+onclick="addToCart('Used Tesla Model 3',24990)">
 Add To Cart
 </button>
 
 </div>
 
-
-
-
 <div class="product">
+
+<div class="sale-badge">🔥 SALE</div>
+
+<div class="offer-badge">⏳ LIMITED OFFER</div>
 
 <img src="used2.jpg">
 
 <h3>Used Tesla Model Y</h3>
 
-<p>$35,990</p>
+<p class="price">
+<del>$34,990</del><br>
+<span style="color:#e82127;font-size:26px;font-weight:bold;">
+$31,990
+</span>
+</p>
 
-<button onclick="addToCart('Used Tesla Model Y',35990)">
+<p>
+Certified • One Previous Owner
+</p>
+
+<button class="btn"
+onclick="addToCart('Used Tesla Model Y',31990)">
 Add To Cart
 </button>
 
 </div>
 
-
-
-
 <div class="product">
+
+<div class="sale-badge">🔥 SALE</div>
+
+<div class="offer-badge">⏳ LIMITED OFFER</div>
 
 <img src="used3.jpg">
 
 <h3>Used Tesla Model S</h3>
 
-<p>$55,990</p>
+<p class="price">
+<del>$49,990</del><br>
+<span style="color:#e82127;font-size:26px;font-weight:bold;">
+$44,990
+</span>
+</p>
 
-<button onclick="addToCart('Used Tesla Model S',55990)">
+<p>
+Premium Interior • Excellent Battery Health
+</p>
+
+<button class="btn"
+onclick="addToCart('Used Tesla Model S',44990)">
 Add To Cart
 </button>
 
 </div>
 
-
-
-
 <div class="product">
+
+<div class="sale-badge">🔥 SALE</div>
+
+<div class="offer-badge">⏳ LIMITED OFFER</div>
 
 <img src="used4.jpg">
 
 <h3>Used Tesla Model X</h3>
 
-<p>$65,990</p>
+<p class="price">
+<del>$59,990</del><br>
+<span style="color:#e82127;font-size:26px;font-weight:bold;">
+$54,990
+</span>
+</p>
 
-<button onclick="addToCart('Used Tesla Model X',65990)">
+<p>
+Luxury SUV • Fully Serviced
+</p>
+
+<button class="btn"
+onclick="addToCart('Used Tesla Model X',54990)">
 Add To Cart
 </button>
 
 </div>
 
-
 </div>
 
 </section>
 
+<section style="background:#e82127;color:white;text-align:center;padding:15px;font-size:18px;font-weight:bold;border-radius:10px;margin-top:40px;">
 
+🔥 LIMITED OFFER — Save up to $5,000 on selected certified used Tesla vehicles. Offer available while supplies last.
 
+</section><section class="cart" id="cart">
 
-
-<section class="cart" id="cart">
-
-<h2>
-Shopping Cart 🛒
+<h2 class="section-title">
+🛒 Shopping Cart
 </h2>
 
+<div class="notice">
 
-<div id="cartItems">
-
-Your cart is empty
+<p>
+Your selected Tesla vehicles will appear below.
+</p>
 
 </div>
 
+<div id="cartItems" style="
+background:white;
+padding:25px;
+border-radius:12px;
+box-shadow:0 5px 20px rgba(0,0,0,.1);
+min-height:120px;
+font-size:18px;
+">
 
-<h3 id="total">
+Your cart is empty.
+
+</div>
+
+<div style="
+margin-top:25px;
+background:#fff;
+padding:20px;
+border-radius:12px;
+box-shadow:0 5px 20px rgba(0,0,0,.1);
+">
+
+<h2 id="total" style="
+color:#e82127;
+text-align:right;
+">
+
 Total: $0
-</h3>
 
+</h2>
 
-<a href="#checkout" class="btn">
-Proceed To Checkout
+</div>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+flex-wrap:wrap;
+margin-top:30px;
+">
+
+<a href="#cars" class="btn">
+
+Continue Shopping
+
 </a>
 
+<a href="#checkout" class="btn">
+
+Proceed To Checkout →
+
+</a>
+
+</div>
 
 </section>
 
-
-
-
-
-<section class="checkout" id="checkout">
-
+<section style="
+background:#111;
+color:white;
+padding:25px;
+border-radius:12px;
+margin-top:50px;
+text-align:center;
+">
 
 <h2>
-Checkout
+
+🚚 Worldwide Shipping Available
+
 </h2>
 
+<p>
 
+We ship Tesla vehicles to eligible destinations worldwide.
 
-<input id="name" type="text" placeholder="Full Name">
+Shipping fees and delivery timelines are confirmed after your order is reviewed.
 
+</p>
 
+</section><section class="checkout" id="checkout">
 
-<input id="email" type="email" placeholder="Email Address">
+<h2 class="section-title">
 
+Secure Checkout
 
+</h2>
 
-<input id="phone" type="text" placeholder="Phone Number">
+<div class="notice">
 
+<strong>Before You Pay</strong><br>
 
+Please review your order and shipping information carefully before making payment.
 
-<textarea id="message" placeholder="Your Order Details"></textarea>
+</div>
 
-
-
-<h3>
-Payment Method
-</h3>
-
-
-<p>○ Bank Transfer</p>
-
-<p>○ Debit / Credit Card</p>
-
-<p>○ Apple Pay</p>
-
-<p>○ Gift Card</p>
-
-
-
-<button class="btn" onclick="sendEmail()">
-
-Place Order
-
-</button>
-<br><br>
-
-<button class="btn" onclick="sendWhatsApp()">
-
-Order Through WhatsApp
-
-</button>
-
-
-</section><section class="contact">
+<div style="
+background:white;
+padding:30px;
+border-radius:15px;
+box-shadow:0 5px 20px rgba(0,0,0,.1);
+margin-top:30px;
+">
 
 <h2>
+
+💳 Pay with Crypto (Trust Wallet)
+
+</h2>
+
+<p>
+
+Send your payment to the wallet address below.
+
+</p>
+
+<input
+type="text"
+id="walletAddress"
+value="0xf17deEB3eE99E3CFbDEbb2A5ddb612aDaE8d1D5C"
+readonly
+style="
+width:100%;
+padding:15px;
+font-size:16px;
+border:2px solid #ddd;
+border-radius:8px;
+">
+
+<br><br>
+
+<button class="btn" onclick="copyWallet()">
+
+📋 Copy Wallet Address
+
+</button>
+
+<p id="copied"
+style="
+color:green;
+font-weight:bold;
+margin-top:15px;
+">
+
+</p>
+
+<br>
+
+<h3 style="text-align:center;">
+
+Scan QR Code
+
+</h3>
+
+<div style="text-align:center;">
+
+<img
+
+src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=0xf17deEB3eE99E3CFbDEbb2A5ddb612aDaE8d1D5C"
+
+alt="Wallet QR Code"
+
+style="
+width:250px;
+max-width:100%;
+border-radius:10px;
+">
+
+</div>
+
+</div>
+
+<div style="
+background:#fff8e1;
+border-left:6px solid orange;
+padding:20px;
+margin-top:30px;
+border-radius:10px;
+">
+
+<h3>
+
+⚠ Payment Instructions
+
+</h3>
+
+<ol>
+
+<li>Copy the wallet address or scan the QR code.</li>
+
+<li>Send the correct payment amount.</li>
+
+<li>Take a screenshot after payment.</li>
+
+<li>Fill in the order confirmation form below.</li>
+
+<li>Your order will be reviewed before shipping.</li>
+
+</ol>
+
+</div>
+
+</section><section id="payment-confirmation">
+
+<h2 class="section-title">
+Payment Confirmation
+</h2>
+
+<div style="
+background:#ffffff;
+padding:30px;
+border-radius:15px;
+box-shadow:0 5px 20px rgba(0,0,0,.1);
+">
+
+<p>
+After completing your payment, please fill in the details below so we can process your order.
+</p>
+
+<form id="paymentForm">
+
+<h3>Customer Information</h3>
+
+<input type="text"
+name="full_name"
+placeholder="Full Name"
+required>
+
+<br><br>
+
+<input type="email"
+name="email"
+placeholder="Email Address"
+required>
+
+<br><br>
+
+<input type="text"
+name="phone"
+placeholder="Phone Number"
+required>
+
+<br><br>
+
+<h3>Order Details</h3>
+
+<input type="text"
+name="product"
+placeholder="Product Ordered"
+required>
+
+<br><br>
+
+<input type="number"
+name="quantity"
+placeholder="Quantity"
+min="1"
+required>
+
+<br><br>
+
+<h3>Shipping Address</h3>
+
+<input type="text"
+name="street"
+placeholder="Street Address"
+required>
+
+<br><br>
+
+<input type="text"
+name="city"
+placeholder="City"
+required>
+
+<br><br>
+
+<input type="text"
+name="state"
+placeholder="State / Province"
+required>
+
+<br><br>
+
+<input type="text"
+name="zipcode"
+placeholder="ZIP / Postal Code">
+
+<br><br>
+
+<input type="text"
+name="country"
+placeholder="Country"
+required>
+
+<br><br>
+
+<textarea
+name="notes"
+rows="5"
+placeholder="Additional Notes (Optional)">
+</textarea>
+
+<br><br>
+
+<div style="
+background:#fff8e1;
+padding:15px;
+border-left:5px solid orange;
+border-radius:8px;
+">
+
+<b>Payment Screenshot</b>
+
+<p>
+After submitting this form, send your payment screenshot to:
+</p>
+
+<p style="
+font-size:18px;
+font-weight:bold;
+color:#e82127;
+">
+
+📧 em5656105@gmail.com
+
+</p>
+
+</div>
+
+<br>
+
+<button
+type="submit"
+class="btn">
+
+✅ Submit Order Details
+
+</button>
+
+</form>
+
+<div
+id="successMessage"
+style="
+display:none;
+margin-top:20px;
+padding:20px;
+background:#d4edda;
+border-left:6px solid green;
+border-radius:10px;
+">
+
+<h3>
+✅ Order Received
+</h3>
+
+<p>
+
+Your order details have been sent successfully.
+
+</p>
+
+<p>
+
+We will review your payment and contact you as soon as possible.
+
+</p>
+
+</div>
+
+</div>
+
+</section><section id="contact">
+
+<h2 class="section-title">
 Contact Tesla Auto Connect
 </h2>
 
+<div style="
+background:#fff;
+padding:30px;
+border-radius:15px;
+box-shadow:0 5px 20px rgba(0,0,0,.1);
+text-align:center;
+">
+
+<h3>Need Help?</h3>
 
 <p>
-📧 Email: em5656105@gmail.com
+📧 <strong>Email:</strong><br>
+em5656105@gmail.com
 </p>
-
 
 <p>
-📱 WhatsApp: 08128745721
+📱 <strong>WhatsApp:</strong><br>
+08128745721
 </p>
 
+<p>
+🌍 We respond to customer inquiries as quickly as possible.
+</p>
+
+</div>
 
 </section>
 
+<section style="
+padding:60px 8%;
+background:#f8f8f8;
+text-align:center;
+">
 
+<h2>Why Choose Tesla Auto Connect?</h2>
 
+<div class="product-grid">
 
+<div class="product">
+<h3>🚗 Premium Vehicles</h3>
+<p>Browse new and certified used Tesla vehicles.</p>
+</div>
 
-<footer>
+<div class="product">
+<h3>🔒 Secure Checkout</h3>
+<p>Simple crypto payment process with order confirmation.</p>
+</div>
+
+<div class="product">
+<h3>🌎 International Shipping</h3>
+<p>We help arrange delivery to eligible destinations worldwide.</p>
+</div>
+
+</div>
+
+</section>
+
+<footer style="
+background:#000;
+color:#fff;
+text-align:center;
+padding:35px;
+margin-top:60px;
+">
+
+<h2>TESLA AUTO CONNECT</h2>
 
 <p>
-© 2026 Tesla Auto Connect
+Premium Tesla Marketplace
 </p>
 
-</footer>
+<p>
 
+© 2026 Tesla Auto Connect
 
+</p>
 
+<p style="font-size:14px;color:#bbb;">
 
+Tesla Auto Connect is an independent marketplace and is not affiliated with or endorsed by Tesla, Inc.
+
+</p>
+
+</footer><script>
+
+emailjs.init({
+publicKey:"SMIll1sq8cBbCzskR"
+});
+
+function copyWallet(){
+
+const wallet=document.getElementById("walletAddress");
+
+navigator.clipboard.writeText(wallet.value);
+
+document.getElementById("copied").innerHTML="✅ Wallet Address Copied Successfully.";
+
+}
+
+document.getElementById("paymentForm").addEventListener("submit",function(e){
+
+e.preventDefault();
+
+const btn=this.querySelector("button");
+
+btn.innerHTML="Sending...";
+btn.disabled=true;
+
+emailjs.sendForm(
+"service_hq3uofs",
+"template_ixlmcgg",
+this
+).then(function(){
+
+document.getElementById("successMessage").style.display="block";
+
+document.getElementById("paymentForm").reset();
+
+btn.innerHTML="✅ Submit Order Details";
+
+btn.disabled=false;
+
+window.location.href="#successMessage";
+
+}).catch(function(error){
+
+alert("Failed to send your order. Please try again.");
+
+console.log(error);
+
+btn.innerHTML="✅ Submit Order Details";
+
+btn.disabled=false;
+
+});
+
+});
+
+let cart=[];
+
+function addToCart(name,price){
+
+cart.push({
+name:name,
+price:price
+});
+
+updateCart();
+
+}
+
+function updateCart(){
+
+const cartItems=document.getElementById("cartItems");
+
+const total=document.getElementById("total");
+
+if(cart.length===0){
+
+cartItems.innerHTML="Your cart is empty.";
+
+total.innerHTML="Total: $0";
+
+return;
+
+}
+
+let html="";
+
+let grandTotal=0;
+
+cart.forEach(function(item){
+
+grandTotal+=item.price;
+
+html+=`
+<div style="border-bottom:1px solid #ddd;padding:15px 0;display:flex;justify-content:space-between;">
+<div><b>${item.name}</b></div>
+<div>$${item.price.toLocaleString()}</div>
+</div>
+`;
+
+});
+
+cartItems.innerHTML=html;
+
+total.innerHTML="Total: $"+grandTotal.toLocaleString();
+
+}
+
+</script>
 
 <script src="script.js"></script>
 
-
 </body>
-
 </html>
