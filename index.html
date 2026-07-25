@@ -734,10 +734,29 @@ min="1"
 required>
 
 <br><br>
-<input type="text"
+<label for="interior"><strong>Choose Interior:</strong></label>
+
+<br><br>
+
+<select
 name="interior"
-placeholder="Preferred Interior (Black or White)"
-required>
+id="interior"
+required
+style="
+width:100%;
+padding:15px;
+font-size:16px;
+border:2px solid #ddd;
+border-radius:8px;
+">
+
+<option value="">Select Interior</option>
+<option value="Black Interior">Black Interior</option>
+<option value="White Interior">White Interior</option>
+
+</select>
+
+<br><br>
 
 <br><br>
 <h3>Shipping Address</h3>
