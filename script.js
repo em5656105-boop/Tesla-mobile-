@@ -1692,4 +1692,26 @@ document.addEventListener(
 /* =========================================================
    TESLA AUTO CONNECT
    SCRIPT COMPLETE
-   ========================================================= */
+   ========================================================= */// =========================================================
+// VEHICLE IMAGE SLIDER
+// =========================================================
+
+document.querySelectorAll(".vehicle-image").forEach((gallery) => {
+  const images = gallery.querySelectorAll("img");
+
+  if (images.length <= 1) return;
+
+  let current = 0;
+
+  images.forEach((img, index) => {
+    img.classList.toggle("active", index === 0);
+  });
+
+  setInterval(() => {
+    images[current].classList.remove("active");
+
+    current = (current + 1) % images.length;
+
+    images[current].classList.add("active");
+  }, 4000);
+});
